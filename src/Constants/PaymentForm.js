@@ -9,7 +9,6 @@ export const FORM = [
       { id: "internal", label: "Internal" },
       { id: "external", label: "External" },
       { id: "repeat", label: "Repeat" },
-      { id: "library", label: "Library" },
     ],
     disabled: false,
     show:true

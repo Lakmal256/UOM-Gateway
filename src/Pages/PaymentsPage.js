@@ -1,6 +1,6 @@
 import ResponsiveDrawer from "../Components/Sidebar";
 import Header from "../Components/Header";
-import PaymentForm from "../Components/PaymentForm";
+import PaymentFormNew from "../Components/PaymentFormNew";
 const PaymentPage = () => {
   return (
     <div>
@@ -10,7 +10,7 @@ const PaymentPage = () => {
       <div>
         <ResponsiveDrawer />
       </div>
-      <div><PaymentForm/></div>
+      <div><PaymentFormNew/></div>
     </div>
   );
 };

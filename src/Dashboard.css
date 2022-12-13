@@ -84,6 +84,16 @@
   margin-bottom: 20px;
 }
 
+.select-button-2 {
+  border-radius: 6px;
+  border: 1px solid;
+  width: calc(100% - 14px);
+  padding: 6px;
+  cursor: pointer;
+  background-color: white;
+  margin-bottom: 10px;
+}
+
 .online-payment {
   color: rgb(92, 15, 15);
   font-weight: bold;
@@ -144,6 +154,9 @@
   cursor: pointer !important;
   color: white !important;
   font-weight: 700 !important;
+  line-height: 1 !important;
+  font-size: 15px !important;
+  
 }
 
 .next-button-main {

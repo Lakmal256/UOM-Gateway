@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import Paymentheader from "./Components/Paymentheader";
+import HomePage from "./Pages/HomePage";
 import PaymentsPage from "./Pages/PaymentsPage";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 
@@ -11,7 +11,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
     <Routes>
-      <Route exact path="/" element={<Paymentheader />} />
+      <Route exact path="/" element={<HomePage />} />
       <Route exact path="/paymentspage" element={<PaymentsPage/>} />
     </Routes>
   </BrowserRouter>

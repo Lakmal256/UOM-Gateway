@@ -44,10 +44,10 @@ switch(item){
   const drawer = (
     <div>
       <List>
-        {menuItems.map((text, index) => (
+        {menuItems.map((text) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
-              <ListItemIcon>{index=(setIcon)}</ListItemIcon>
+              <ListItemIcon>{setIcon(text)}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
