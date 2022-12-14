@@ -1,7 +1,11 @@
 import ResponsiveDrawer from "../Components/Sidebar";
 import Header from "../Components/Header";
-import PaymentFormNew from "../Components/PaymentFormNew";
+import { useLocation } from "react-router-dom";
+import { RouteList } from "../Routes";
+
 const PaymentPage = () => {
+  const location = useLocation();
+
   return (
     <div>
       <div>
@@ -10,7 +14,17 @@ const PaymentPage = () => {
       <div>
         <ResponsiveDrawer />
       </div>
-      <div><PaymentFormNew/></div>
+      <div className="inner-main">
+        {RouteList.map((route) => {
+          if (route.path === location.pathname) {
+            return (
+              <div key={route.id}>
+                {route.element}
+              </div>
+            );
+          }
+        })}
+      </div>
     </div>
   );
 };

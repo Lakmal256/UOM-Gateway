@@ -156,7 +156,6 @@
   font-weight: 700 !important;
   line-height: 1 !important;
   font-size: 15px !important;
-  
 }
 
 .next-button-main {
@@ -294,7 +293,7 @@
   background-color: white !important;
   margin: auto !important;
   width: 100% !important;
-  position: relative !important;
+  position: fixed !important;
   z-index: 10000;
 }
 
@@ -306,25 +305,78 @@
   font-size: large;
 }
 
-.uom_header{
-    display: flex;
+.uom_header {
+  display: flex;
 }
 
-.payments_form{
-  padding-left: 500px;
-  width: 35%;
+.payments_form {
+  padding: 20px;
+  width: 400px;
+  margin: auto;
 }
 
-.payment_header{
+.payment_header {
   text-align: center;
   font-weight: 700;
   color: rgb(92, 15, 15);
   margin: 10px;
   margin-top: 20px;
-
 }
 
-.drawer_main{
+.drawer_main {
   padding-top: 75px;
   background-color: rgb(247, 242, 242) !important;
+}
+
+.inner-main {
+  margin-top: 70px;
+  margin-left: 300px;
+}
+
+.form_row_left {
+}
+.form_row_right {
+}
+
+.profile_form_header{
+  padding: 20px;
+  display: flex;
+  width: 350px;
+  margin: auto;
+}
+
+.profile_form_image_main{
+  width: 20%;
+}
+
+.profile_form_image{
+  width: calc(100% - 10px);
+  height: 50px;
+  padding: 10px;
+}
+
+.index_user_text_main{
+  width: 80%;
+  line-height: 30px;
+  padding: 15px;
+}
+
+.index_text{
+  color: rgb(92, 15, 15);
+  font-size: 18px;
+  line-height: 15px;
+  font-weight: bold;
+}
+
+.user_name_text{
+  color: rgb(92, 15, 15);
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: bold;
+}
+
+.hr_line{
+  width: 600px;
+  margin: auto;
+  color: rgb(180, 175, 175);
 }

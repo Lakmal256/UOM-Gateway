@@ -18,7 +18,7 @@ const Internal = ({ open, handleClose, openSignup }) => {
     if (user === "" || password === "") {
       console.log("Please Enter User Name and Password");
     } else {
-      history("/paymentspage");
+      history("/app");
     }
   };
 

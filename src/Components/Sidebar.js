@@ -13,12 +13,14 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import HelpIcon from "@mui/icons-material/Help";
 import "./drawer.css";
+import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 300;
 
 const ResponsiveDrawer = (props) => {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const history = useNavigate();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -27,25 +29,29 @@ const ResponsiveDrawer = (props) => {
   const menuItems = ["Payments", "Profile", "Receipts", "Help", "Logout"];
 
   const setIcon = (item) => {
-switch(item){
-  case "Payments":
-    return <AttachMoneyIcon/>
-  case "Profile":
-    return <PersonIcon/>
-  case "Receipts":
-    return <ReceiptIcon/>
-  case "Help":
-    return <HelpIcon/>
-  case "Logout":
-    return <LogoutIcon/>  
-}
+    switch (item) {
+      case "Payments":
+        return <AttachMoneyIcon />;
+      case "Profile":
+        return <PersonIcon />;
+      case "Receipts":
+        return <ReceiptIcon />;
+      case "Help":
+        return <HelpIcon />;
+      case "Logout":
+        return <LogoutIcon />;
+    }
+  };
+
+  const setRoute = (route) => {
+    history(`/app/${route}`);
   };
 
   const drawer = (
     <div>
       <List>
         {menuItems.map((text) => (
-          <ListItem key={text} disablePadding>
+          <ListItem onClick={() => setRoute(text)} key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>{setIcon(text)}</ListItemIcon>
               <ListItemText primary={text} />
