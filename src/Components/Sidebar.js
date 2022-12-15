@@ -51,7 +51,7 @@ const ResponsiveDrawer = (props) => {
     <div>
       <List>
         {menuItems.map((text) => (
-          <ListItem onClick={() => setRoute(text)} key={text} disablePadding>
+          <ListItem className="list_item" onClick={() => setRoute(text)} key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>{setIcon(text)}</ListItemIcon>
               <ListItemText primary={text} />

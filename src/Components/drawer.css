@@ -1,4 +1,9 @@
-.drawer_main{
-    padding-top: 75px;
-    background-color: rgb(247, 242, 242);
+.drawer_main {
+  padding-top: 75px;
+  background-color: rgb(247, 242, 242);
+}
+
+.list_item:hover {
+  background-color: rgb(92, 15, 15);
+  color: white;
 }
