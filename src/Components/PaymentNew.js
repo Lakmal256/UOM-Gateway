@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../Dashboard.css";
 import Internal from "./Internal";
-import Create from "./Create.js";
+import Create from "./CreateNew.js";
 import { FORM } from "../Constants/PaymentForm";
 
 class Payment extends Component {

@@ -23,6 +23,9 @@ const PaymentPage = () => {
               </div>
             );
           }
+          else {
+            return null;
+          }
         })}
       </div>
     </div>

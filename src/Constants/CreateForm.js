@@ -1,0 +1,48 @@
+export const CREATE = [
+    {
+      id: "firstName",
+      name: "firstName",
+      label: "First Name",
+      className: "select-button-2",
+      type: "text",
+      disabled: false,
+      show: true,
+    },
+    {
+      id: "lastName",
+      name: "lastName",
+      label: "Last Name",
+      className: "select-button-2",
+      type: "text",
+      disabled: false,
+      show: true,
+    },
+    {
+      id: "userName",
+      name: "userName",
+      label: "User Name",
+      className: "select-button-2",
+      type: "email",
+      disabled: false,
+      show: true,
+    },
+    {
+      id: "password",
+      name: "password",
+      label: "Password",
+      className: "select-button-2",
+      type: "password",
+      disabled: false,
+      show: true,
+    },
+    {
+      id: "confirmPassword",
+      name: "confirmPassword",
+      label: "Confirm Password",
+      className: "select-button-2",
+      type: "password",
+      disabled: false,
+      show: true,
+    },
+  ];
+  

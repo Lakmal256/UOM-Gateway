@@ -94,6 +94,16 @@
   margin-bottom: 10px;
 }
 
+.select-button-3 {
+  border-radius: 6px;
+  border: 1px solid;
+  width: 300px;
+  padding: 6px;
+  cursor: pointer;
+  background-color: white;
+  margin-bottom: 10px;
+}
+
 .online-payment {
   color: rgb(92, 15, 15);
   font-weight: bold;
@@ -161,6 +171,8 @@
 .next-button-main {
   display: flex;
   justify-content: flex-end;
+  width: 650px;
+  margin: auto;
 }
 
 .select-menu {
@@ -289,6 +301,15 @@
   margin-bottom: 10px;
 }
 
+.form-row-flex {
+  color: rgb(92, 15, 15);
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .header {
   background-color: white !important;
   margin: auto !important;
@@ -333,11 +354,6 @@
   margin-left: 300px;
 }
 
-.form_row_left {
-}
-.form_row_right {
-}
-
 .profile_form_header{
   padding: 20px;
   display: flex;
@@ -379,4 +395,9 @@
   width: 600px;
   margin: auto;
   color: rgb(180, 175, 175);
+}
+
+.profile_form_main {
+  width: 650px;
+  margin: auto;
 }

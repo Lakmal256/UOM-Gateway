@@ -18,13 +18,13 @@ import { useNavigate } from "react-router-dom";
 const drawerWidth = 300;
 
 const ResponsiveDrawer = (props) => {
-  const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  // const { window } = props;
+  // const [mobileOpen, setMobileOpen] = React.useState(false);
   const history = useNavigate();
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
+  // const handleDrawerToggle = () => {
+    // setMobileOpen(!mobileOpen);
+  // };
 
   const menuItems = ["Payments", "Profile", "Receipts", "Help", "Logout"];
 

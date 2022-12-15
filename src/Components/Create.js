@@ -14,7 +14,7 @@ const Create = ({ open, handleClose, onSubmit }) => {
 
     if (isSubmit) {
       if (user === "" || password === "") {
-        console.log("Please Enter User Name and Password");
+        console.log("Please Fill the Form");
       } else {
         onSubmit(user, password);
       }
