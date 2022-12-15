@@ -81,7 +81,7 @@ class Payment extends Component {
             </button>
             <button className="external-button">External</button>
           </div>
-          <div className="next-button-main">
+          <div className="next-button-main1">
             <button className="next-button">Next</button>
           </div>
         </div>

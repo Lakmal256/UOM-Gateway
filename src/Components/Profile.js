@@ -91,7 +91,7 @@ const Profile = () => {
         })}
       </div>
 
-      <div className="next-button-main">
+      <div className="save-button-main">
         <Button className="next-button">Save</Button>
       </div>
     </div>

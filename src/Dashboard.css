@@ -138,6 +138,7 @@
   background-color: brown;
   cursor: pointer;
   color: white;
+  font-weight: 700;
 }
 
 .external-button {
@@ -148,6 +149,7 @@
   color: brown;
   border-color: brown;
   border: 1px solid;
+  font-weight: 700;
 }
 
 .select-category {
@@ -168,7 +170,21 @@
   font-size: 15px !important;
 }
 
-.next-button-main {
+.next-button-main1 {
+  display: flex;
+  justify-content: flex-end;
+  width: 335px;
+  margin: auto;
+}
+
+.next-button-main2 {
+  display: flex;
+  justify-content: flex-end;
+  width: 400px;
+  margin: auto;
+}
+
+.save-button-main {
   display: flex;
   justify-content: flex-end;
   width: 650px;
