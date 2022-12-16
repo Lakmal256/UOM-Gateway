@@ -1,5 +1,4 @@
 import "../Dashboard.css";
-import * as React from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -9,8 +8,29 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import SearchBar from "react-material-ui-searchbar";
 import { ROW } from "../Constants/ReceiptsTableForm";
+import React, { Component } from "react";
+import ReceiptsDialog from "./ReceiptsDialog";
 
-const BasicTable = () => {
+class BasicTable extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      openSignin: false,
+    };
+  }
+
+  closeSigninModel = () => {
+    this.setState({ openSignin: false });
+  };
+
+  openSigninModel = () => {
+    this.setState({ openSignin: true });
+  };
+
+  render() {
+    const { openSignin } = this.state;
+
   return (
     <div className="receipts_table_main">
       <div className="payment_header">Receipts</div>
@@ -65,7 +85,7 @@ const BasicTable = () => {
                   <TableCell>{row.date}</TableCell>
                   <TableCell>{row.status}</TableCell>
                   <TableCell>
-                    <button className="view_receipts_button">
+                    <button className="view_receipts_button" onClick={() => this.setState({ openSignin: true })}>
                       {row.action}
                     </button>
                   </TableCell>
@@ -75,8 +95,12 @@ const BasicTable = () => {
           </Table>
         </TableContainer>
       </div>
+      <ReceiptsDialog
+          open={openSignin}
+          handleClose={this.closeSigninModel}
+        />
     </div>
   );
 };
-
+}
 export default BasicTable;

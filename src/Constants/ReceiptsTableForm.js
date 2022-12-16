@@ -6,7 +6,6 @@ export const ROW = [
     date: "2022/12/15",
     status: "Success",
     action: "View Receipt",
-    show: true,
   },
   {
     paymentId: "2",
@@ -15,7 +14,6 @@ export const ROW = [
     date: "2022/12/14",
     status: "Success",
     action: "View Receipt",
-    show: true,
   },
   {
     paymentId: "3",
@@ -24,7 +22,6 @@ export const ROW = [
     date: "2022/12/13",
     status: "Success",
     action: "View Receipt",
-    show: true,
   },
   {
     paymentId: "4",
@@ -33,6 +30,5 @@ export const ROW = [
     date: "2022/12/12",
     status: "Success",
     action: "View Receipt",
-    show: false,
   },
 ];
