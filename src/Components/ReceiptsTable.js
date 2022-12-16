@@ -8,19 +8,9 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import SearchBar from "react-material-ui-searchbar";
+import { ROW } from "../Constants/ReceiptsTableForm";
 
-function createData(paymentId, paymentCategory, amount, date, status,action) {
-  return { paymentId, paymentCategory, amount, date, status,action };
-}
-
-const rows = [
-  createData(1,"Msc",10000,"12/15","Success","View Receipt"),
-  createData(2,"Research",7000, "12/14", "Success","View Receipt"),
-  createData(3,"Internal Payment",500 ,"12/13", "Success","View Receipt"),
-  createData(4,"Msc",12000, "12/12", "Success","View Receipt"),
-];
-
-export default function BasicTable() {
+const BasicTable = () => {
   return (
     <div className="receipts_table_main">
       <div className="payment_header">Receipts</div>
@@ -40,7 +30,6 @@ export default function BasicTable() {
             />
           </div>
         </div>
-
         <TableContainer component={Paper}>
           <Table
             sx={{
@@ -63,7 +52,7 @@ export default function BasicTable() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.map((row) => (
+              {ROW.map((row) => (
                 <TableRow
                   key={row.paymentId}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
@@ -75,7 +64,11 @@ export default function BasicTable() {
                   <TableCell>{row.amount}</TableCell>
                   <TableCell>{row.date}</TableCell>
                   <TableCell>{row.status}</TableCell>
-                  <TableCell><button className="view_receipts_button" >{row.action}</button></TableCell>
+                  <TableCell>
+                    <button className="view_receipts_button">
+                      {row.action}
+                    </button>
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -84,4 +77,6 @@ export default function BasicTable() {
       </div>
     </div>
   );
-}
+};
+
+export default BasicTable;
