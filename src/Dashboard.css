@@ -455,3 +455,16 @@
   justify-content: space-between;
   padding-bottom: 20px;
 }
+
+.view_receipts_button{
+  padding: 6px !important;
+  width: 100px !important;
+  border-radius: 6px !important;
+  border: none !important;
+  background-color: brown !important;
+  cursor: pointer !important;
+  color: white !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  font-size: 10px !important;
+}

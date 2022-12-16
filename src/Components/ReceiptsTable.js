@@ -75,7 +75,7 @@ export default function BasicTable() {
                   <TableCell>{row.amount}</TableCell>
                   <TableCell>{row.date}</TableCell>
                   <TableCell>{row.status}</TableCell>
-                  <TableCell><button>{row.action}</button></TableCell>
+                  <TableCell><button className="view_receipts_button" >{row.action}</button></TableCell>
                 </TableRow>
               ))}
             </TableBody>
