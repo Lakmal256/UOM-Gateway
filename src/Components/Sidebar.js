@@ -40,6 +40,8 @@ const ResponsiveDrawer = (props) => {
         return <HelpIcon />;
       case "Logout":
         return <LogoutIcon />;
+      default :
+        return (null)  ;
     }
   };
 

@@ -70,7 +70,7 @@ const ReceiptDialog = ({ open, handleClose, openSignup }) => {
           <div className="print_close">
             <button className="print_button">Print</button>
             <div>
-              <button className="print_button" onClick={openSignup}>
+              <button className="print_button" onClick={handleClose}>
                 Close
               </button>
             </div>
