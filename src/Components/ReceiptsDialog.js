@@ -2,7 +2,6 @@ import Dialog from "@mui/material/Dialog";
 import "../Dashboard.css";
 import Transfer from "../images/transfer.png";
 import { VIEW } from "../Constants/ViewReceipts";
-import { ROW } from "../Constants/ReceiptsTableForm";
 import React from "react";
 
 const ReceiptDialog = ({ open, handleClose }) => {
@@ -21,46 +20,28 @@ const ReceiptDialog = ({ open, handleClose }) => {
         </div>
         <div className="receipts_dialog_main">
           <div className="receipts_data_main">
-            {VIEW.map(
-              (field) => {
-                return (
-                  <div className="data_row_flex" key={field.left.id}>
-                    <div className="form_row-left">
-                      <div className="form-label-left">{field.left.label}</div>
-                    </div>
-                    <div className="form_row-right">
-                      <div className="form-label-right">
-                        {field.right.label}
-                      </div>
-                    </div>
+            {VIEW.map((field) => {
+              return (
+                <div className="data_row_flex" key={field.left.id}>
+                  <div className="form_row-left">
+                    <div className="form-label-left">{field.left.label}</div>
                   </div>
-                );
-              }
-              // }
-            )}
-          </div>
-          <div className="amount_paid_main">
-            <div className="amount_paid">Amount Paid</div>
-            <div>
-              {ROW.map((field) => {
-                return (
-                  <div className="data_row_flex" key={field.id}>
-                    <div className="form_row-left">
-                      <div className="form-label-left">{field.amount}</div>
-                    </div>
+                  <div className="form_row-right">
+                    <div className="form-label-right">{field.right.label}</div>
                   </div>
-                );
-              })}
+                </div>
+              );
+            })}
+            <div className="amount_paid_main">
+              <div className="amount_paid">Amount Paid</div>
+              <div className="how_much">LKR 450.00</div>
             </div>
-            {/* <div className="how_much">LKR 450.00</div> */}
           </div>
           <div className="print_close">
             <button className="print_button">Print</button>
-            <div>
-              <button className="print_button" onClick={handleClose}>
-                Close
-              </button>
-            </div>
+            <button className="print_button" onClick={handleClose}>
+              Close
+            </button>
           </div>
         </div>
       </Dialog>

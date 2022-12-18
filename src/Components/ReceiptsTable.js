@@ -98,6 +98,7 @@ class BasicTable extends Component {
       <ReceiptsDialog
           open={openSignin}
           handleClose={this.closeSigninModel}
+          amount="10000"
         />
     </div>
   );
