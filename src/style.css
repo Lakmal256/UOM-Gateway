@@ -103,4 +103,20 @@ body {
   border-radius: 6px;
   margin-bottom: 10px;
   width: 288px;
+  margin-right: 10px;
+}
+.add_option_main{
+  display: flex;
+  position: relative;
+}
+.button_remove_option{
+  cursor: pointer;
+  padding: 5px;
+  height: 27px;
+  margin-right: 5px;
+}
+.button_remove_option:hover {
+  border-radius: 50%;
+  background-color: rgb(218, 216, 216);
+  transition: 0.3s;
 }

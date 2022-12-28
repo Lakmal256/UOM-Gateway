@@ -119,7 +119,7 @@ const App = () => {
           </div>
           {item.option.map((qid, oid) => {
             return (
-              <div key={oid}>
+              <div className="add_option_main" key={oid}>
                 <input
                   className="input_option"
                   type="text"
