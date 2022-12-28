@@ -20,12 +20,11 @@ const App = () => {
     newFormValues.splice(i, 1);
     setFormValues(newFormValues);
   };
-  const optionForm = formValues[3];
 
   const removeOptionFields = (i) => {
-    const newQuestion = [...optionForm];
-    optionForm.splice(i, 1);
-    setFormValues(newQuestion);
+    const newFormValues = [...formValues.question.option];
+    formValues.question.option.splice(i, 1);
+    setFormValues(newFormValues);
   };
 
   const handleData = (e, id) => {
