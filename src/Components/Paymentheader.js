@@ -3,6 +3,7 @@ import favicon from "../images/favicon.ico";
 import landing_main1 from "../images/landing_main1.png";
 import PaymentNew from "./PaymentNew";
 
+
 const Paymentheader = () => {
   return (
     <div>
@@ -15,7 +16,7 @@ const Paymentheader = () => {
       <div className="heading-main1">
         <div className="heading-main2">
           <div>
-            <button className="secure-button">Secure Payment</button>
+            <button className="rainbow">Secure Payment</button>
           </div>
 
           <div className="heading">

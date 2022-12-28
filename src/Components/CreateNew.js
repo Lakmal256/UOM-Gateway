@@ -6,7 +6,6 @@ import Student from "../images/Student.png";
 import { useState } from "react";
 import { CREATE } from "../Constants/CreateForm";
 
-
 const Create = ({ open, handleClose, onSubmit }) => {
   const [userName, setUserName] = React.useState("");
   const [password, setPassword] = React.useState("");
@@ -14,9 +13,9 @@ const Create = ({ open, handleClose, onSubmit }) => {
   const [dataSet, setDataSet] = useState({
     firstName: "",
     lastName: "",
-    userName:"",
-    password:"",
-    confirmPassword:""
+    userName: "",
+    password: "",
+    confirmPassword: "",
   });
 
   const handleData = (e) => {
@@ -59,34 +58,33 @@ const Create = ({ open, handleClose, onSubmit }) => {
         </div>
 
         {CREATE.map((field) => {
-        if (field.show) {
-          if (field.type === "select") {
-            return (
-              <div className="form-row" key={field.id}>
-                <div className="form-label">{field.label}</div>
-              </div>
-            );
+          if (field.show) {
+            if (field.type === "select") {
+              return (
+                <div className="form-row" key={field.id}>
+                  <div className="form-label">{field.label}</div>
+                </div>
+              );
+            } else {
+              return (
+                <div className="form-row" key={field.id}>
+                  <div className="form-label">{field.label}</div>
+                  <input
+                    placeholder={field.label}
+                    name={field.name}
+                    className={field.className}
+                    type={field.type}
+                    disabled={field.disabled}
+                    onChange={(e) => handleData(e)}
+                    value={dataSet[field.name]}
+                  />
+                </div>
+              );
+            }
           } else {
-            return (
-              <div className="form-row" key={field.id}>
-                <div className="form-label">{field.label}</div>
-                <input
-                  placeholder={field.label}
-                  name={field.name}
-                  className={field.className}
-                  type={field.type}
-                  disabled={field.disabled}
-                  onChange={(e) => handleData(e)}
-                  value={dataSet[field.name]}
-                />
-              </div>
-            );
+            return null;
           }
-        } else {
-          return null;
-        }
-      })}
-
+        })}
         <div className="signin-text">
           <Button className="signin" onClick={() => controlData(true)}>
             Sign Up

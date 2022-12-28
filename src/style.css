@@ -1,0 +1,106 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+.form-inline {
+  margin-bottom: 10px;
+}
+.form-inline label {
+  margin: 5px 10px 5px 0;
+}
+.form-inline input {
+  vertical-align: middle;
+  padding: 10px;
+  background-color: #f5f4f4;
+  border: 1px solid #bdbdbd;
+  border-radius: 6px;
+  width: 488px;
+}
+.button-section {
+  margin: 3%;
+}
+.button {
+  padding: 10px 20px;
+  background-color: gray;
+  border: 1px solid #ddd;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+.button:hover {
+  background-color: dodgerblue;
+}
+.button_remove {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 5px;
+  margin-right: 5px;
+}
+.button_remove:hover {
+  border-radius: 50%;
+  background-color: rgb(218, 216, 216);
+  transition: 0.3s;
+}
+.internal_map {
+  justify-content: center;
+}
+.box {
+  padding: 10px;
+  width: 600px;
+  margin: auto;
+  border: groove;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  position: relative;
+  border-top:5px solid dodgerblue;
+}
+.input_text {
+  margin-left: 75px !important;
+}
+
+.select_option_main {
+  margin-bottom: 40px;
+  font-size: small;
+  margin-left: 5px;
+  display: flex;
+}
+.select_label {
+  margin-right: 10px;
+  align-items: center;
+  display: flex;
+  font-weight: 700;
+}
+.select {
+  padding: 1px !important;
+  width: 80px !important;
+  font-size: small !important;
+  margin-left: 5px !important;
+}
+.add_option {
+  margin-left: 20px;
+  border: 2px solid #ddd;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.add_option:hover {
+  background-color: rgb(206, 222, 255);
+  transition: 0.3s;
+}
+
+.input_option{
+  vertical-align: middle;
+  padding: 10px;
+  background-color: #f5f4f4;
+  border: 1px solid #bdbdbd;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  width: 288px;
+}

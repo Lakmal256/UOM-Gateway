@@ -23,7 +23,7 @@ const ResponsiveDrawer = (props) => {
   const history = useNavigate();
 
   // const handleDrawerToggle = () => {
-    // setMobileOpen(!mobileOpen);
+  // setMobileOpen(!mobileOpen);
   // };
 
   const menuItems = ["Payments", "Profile", "Receipts", "Help", "Logout"];
@@ -40,8 +40,8 @@ const ResponsiveDrawer = (props) => {
         return <HelpIcon />;
       case "Logout":
         return <LogoutIcon />;
-      default :
-        return (null)  ;
+      default:
+        return null;
     }
   };
 
@@ -53,7 +53,12 @@ const ResponsiveDrawer = (props) => {
     <div>
       <List>
         {menuItems.map((text) => (
-          <ListItem className="list_item" onClick={() => setRoute(text)} key={text} disablePadding>
+          <ListItem
+            className="list_item"
+            onClick={() => setRoute(text)}
+            key={text}
+            disablePadding
+          >
             <ListItemButton>
               <ListItemIcon>{setIcon(text)}</ListItemIcon>
               <ListItemText primary={text} />
