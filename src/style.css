@@ -57,7 +57,7 @@ body {
   border-radius: 10px;
   margin-bottom: 20px;
   position: relative;
-  border-top:5px solid dodgerblue;
+  border-top: 5px solid dodgerblue;
 }
 .input_text {
   margin-left: 75px !important;
@@ -95,7 +95,7 @@ body {
   transition: 0.3s;
 }
 
-.input_option{
+.input_option {
   vertical-align: middle;
   padding: 10px;
   background-color: #f5f4f4;
@@ -105,11 +105,11 @@ body {
   width: 288px;
   margin-right: 10px;
 }
-.add_option_main{
+.add_option_main {
   display: flex;
   position: relative;
 }
-.button_remove_option{
+.button_remove_option {
   cursor: pointer;
   padding: 5px;
   height: 27px;
@@ -119,4 +119,19 @@ body {
   border-radius: 50%;
   background-color: rgb(218, 216, 216);
   transition: 0.3s;
+}
+
+.button_submit {
+  padding: 10px 20px;
+  background-color: gray;
+  border: 1px solid #ddd;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+  margin-left: 10px;
+}
+
+.button_submit:hover {
+  background-color: rgb(22, 163, 97);
 }

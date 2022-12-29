@@ -73,6 +73,12 @@ const App = () => {
         >
           Add
         </button>
+        <button
+          className="button_submit"
+          onClick={() => console.log(formValues)}
+        >
+          Submit
+        </button>
       </div>
       {formValues.map((item, index) => (
         <div className="box" key={index}>
@@ -139,7 +145,6 @@ const App = () => {
               </div>
             );
           })}
-          <button onClick={() => console.log(formValues)}>A</button>
         </div>
       ))}
     </div>
