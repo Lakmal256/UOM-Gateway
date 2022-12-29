@@ -21,12 +21,6 @@ const App = () => {
     setFormValues(newFormValues);
   };
 
-  const removeOptionFields = (i) => {
-    const newFormValues = [...formValues.question.option];
-    formValues.question.option.splice(i, 1);
-    setFormValues(newFormValues);
-  };
-
   const handleData = (e, id) => {
     const value = e.target.value;
     var newFormValues = JSON.parse(JSON.stringify(formValues));
@@ -62,6 +56,14 @@ const App = () => {
     setFormValues(newFormValues);
   };
 
+  const removeOptionFields = (id,i) => {
+    var newFormValues = JSON.parse(JSON.stringify(formValues));
+    var question = newFormValues.find((i) => i.id === id);
+    console.log("question", question);
+    question.option.splice(i, 1);
+    setFormValues(newFormValues);
+  };
+
   const [selectedValue, setSelectedValue] = useState("scq");
 
   return (
@@ -75,7 +77,7 @@ const App = () => {
           Add
         </button>
       </div>
-      {formValues.map((item, index, question) => (
+      {formValues.map((item, index) => (
         <div className="box" key={index}>
           <div className="form-inline">
             <input
@@ -130,7 +132,7 @@ const App = () => {
 
                 <div
                   className="button_remove_option"
-                  onClick={() => removeOptionFields()}
+                  onClick={() => removeOptionFields(item.id)}
                 >
                   &times;
                 </div>
