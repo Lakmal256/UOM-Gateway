@@ -40,9 +40,9 @@ const App = () => {
   const handleOptionData = (e, qid, oid) => {
     const value = e.target.value;
     var newFormValues = JSON.parse(JSON.stringify(formValues));
-    var question = newFormValues.find((i) => i.qid === qid);
-    var qOption = question.option.find((i) => i.oid === oid);
-    qOption.optionName = value;
+    var question = newFormValues.find((i) => i.id === qid);
+    var option = question.option.find((i) => i.id === oid);
+    option.optionName = value;
     setFormValues(newFormValues);
   };
 
@@ -63,6 +63,11 @@ const App = () => {
     setFormValues(newFormValues);
   };
 
+  const submit = () => {
+    localStorage.setItem("dataSet", JSON.stringify(formValues));
+    setFormValues([{ id: 0, questionTitle: "", type: "scq", option: [] }]);
+  };
+
   return (
     <div>
       <div className="button-section">
@@ -73,10 +78,7 @@ const App = () => {
         >
           Add
         </button>
-        <button
-          className="button_submit"
-          onClick={() => console.log(formValues)}
-        >
+        <button className="button_submit" onClick={() => submit()}>
           Submit
         </button>
       </div>
@@ -124,16 +126,16 @@ const App = () => {
               ) : null}
             </div>
           </div>
-          {item.option.map((qid, oid) => {
+          {item.option.map((option) => {
             return (
-              <div className="add_option_main" key={oid}>
+              <div className="add_option_main" key={option.id}>
                 <input
                   className="input_option"
                   type="text"
                   name="name"
                   placeholder="Option Name"
-                  value={oid.optionName}
-                  onChange={(e) => handleOptionData(e, item.qid, item.oid)}
+                  value={option.optionName}
+                  onChange={(e) => handleOptionData(e, item.id, option.id)}
                 />
 
                 <div
