@@ -21,6 +21,14 @@ const App = () => {
     setFormValues(newFormValues);
   };
 
+  const removeOptionFields = (id, i) => {
+    var newFormValues = JSON.parse(JSON.stringify(formValues));
+    var question = newFormValues.find((i) => i.id === id);
+    console.log("question", question);
+    question.option.splice(i, 1);
+    setFormValues(newFormValues);
+  };
+
   const handleData = (e, id) => {
     const value = e.target.value;
     var newFormValues = JSON.parse(JSON.stringify(formValues));
@@ -33,8 +41,8 @@ const App = () => {
     const value = e.target.value;
     var newFormValues = JSON.parse(JSON.stringify(formValues));
     var question = newFormValues.find((i) => i.qid === qid);
-    var qoption = question.option.find((i) => i.oid === oid);
-    qoption.optionName = value;
+    var qOption = question.option.find((i) => i.oid === oid);
+    qOption.optionName = value;
     setFormValues(newFormValues);
   };
 
@@ -53,14 +61,6 @@ const App = () => {
     console.log("question", question);
     // question.option =[...question.option,{id:question.option.length, optionName:""}] ;
     question.option.push({ id: question.option.length, optionName: "" });
-    setFormValues(newFormValues);
-  };
-
-  const removeOptionFields = (id,i) => {
-    var newFormValues = JSON.parse(JSON.stringify(formValues));
-    var question = newFormValues.find((i) => i.id === id);
-    console.log("question", question);
-    question.option.splice(i, 1);
     setFormValues(newFormValues);
   };
 
@@ -89,7 +89,7 @@ const App = () => {
               onChange={(e) => handleData(e, item.id)}
             />
 
-            <div className="button_remove" onClick={() => removeFormFields()}>
+            <div className="button_remove" onClick={() => removeFormFields(item.id)}>
               &times;
             </div>
           </div>
@@ -108,7 +108,7 @@ const App = () => {
                 <MenuItem value={"open"}>open</MenuItem>
                 <MenuItem value={"dropdown"}>dropdown</MenuItem>
               </Select>
-              {selectedValue !== "open" ? (
+              {item.type !== "open" ? (
                 <button
                   onClick={() => handleOption(item.id)}
                   className="add_option"
