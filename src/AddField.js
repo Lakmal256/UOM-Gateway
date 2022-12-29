@@ -52,7 +52,6 @@ const App = () => {
     var question = newFormValues.find((i) => i.id === id);
     question.type = value;
     setFormValues(newFormValues);
-    setSelectedValue(e.target.value);
   };
 
   const handleOption = (id) => {
@@ -63,8 +62,6 @@ const App = () => {
     question.option.push({ id: question.option.length, optionName: "" });
     setFormValues(newFormValues);
   };
-
-  const [selectedValue, setSelectedValue] = useState("scq");
 
   return (
     <div>
