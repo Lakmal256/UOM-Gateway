@@ -86,7 +86,10 @@ const App = () => {
               onChange={(e) => handleData(e, item.id)}
             />
 
-            <div className="button_remove" onClick={() => removeFormFields(item.id)}>
+            <div
+              className="button_remove"
+              onClick={() => removeFormFields(item.id)}
+            >
               &times;
             </div>
           </div>
