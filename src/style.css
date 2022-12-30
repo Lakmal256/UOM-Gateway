@@ -150,3 +150,14 @@ body {
 .button_view:hover {
   background-color: rgb(233, 142, 56);
 }
+
+.view_box{
+  padding: 10px;
+  width: 600px;
+  margin: auto;
+  border: groove;
+  border-radius: 10px;
+  margin-top: 50px;
+  position: relative;
+  border-top: 5px solid dodgerblue;
+}

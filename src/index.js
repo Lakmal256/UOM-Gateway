@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import reportWebVitals from "./reportWebVitals";
+// import reportWebVitals from "./reportWebVitals";
 import App from "./AddField";
 import View from "./viewsurvey";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -18,4 +18,4 @@ root.render(
   </React.StrictMode>
 );
 
-reportWebVitals();
+// reportWebVitals();
