@@ -6,8 +6,8 @@ import reportWebVitals from "./reportWebVitals";
 // import PaymentsPage from "./Pages/PaymentsPage";
 // import { Route, Routes, BrowserRouter } from "react-router-dom";
 import App from "./AddField";
-
-
+import View from "./viewsurvey";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(
@@ -23,7 +23,12 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <App/>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<App />} />
+        <Route exact path="/view" element={<View />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

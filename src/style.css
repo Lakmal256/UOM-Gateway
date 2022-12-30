@@ -135,3 +135,18 @@ body {
 .button_submit:hover {
   background-color: rgb(22, 163, 97);
 }
+
+.button_view {
+  padding: 10px 20px;
+  background-color: gray;
+  border: 1px solid #ddd;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+  margin-left: 10px;
+}
+
+.button_view:hover {
+  background-color: rgb(233, 142, 56);
+}

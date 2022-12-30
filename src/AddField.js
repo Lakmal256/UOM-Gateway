@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./style.css";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
+import API from "./api";
+import { useNavigate } from "react-router-dom";
 
 const App = () => {
   const [formValues, setFormValues] = useState([
@@ -24,7 +26,6 @@ const App = () => {
   const removeOptionFields = (id, i) => {
     var newFormValues = JSON.parse(JSON.stringify(formValues));
     var question = newFormValues.find((i) => i.id === id);
-    console.log("question", question);
     question.option.splice(i, 1);
     setFormValues(newFormValues);
   };
@@ -57,7 +58,6 @@ const App = () => {
   const handleOption = (id) => {
     var newFormValues = JSON.parse(JSON.stringify(formValues));
     var question = newFormValues.find((i) => i.id === id);
-    console.log("question", question);
     // question.option =[...question.option,{id:question.option.length, optionName:""}] ;
     question.option.push({ id: question.option.length, optionName: "" });
     setFormValues(newFormValues);
@@ -66,7 +66,22 @@ const App = () => {
   const submit = () => {
     localStorage.setItem("dataSet", JSON.stringify(formValues));
     setFormValues([{ id: 0, questionTitle: "", type: "scq", option: [] }]);
+
+    const payload = { survey: JSON.stringify(formValues) };
+    API.post("/addsurvey", payload)
+      .then((res) => {
+        console.log("result", res.data.message);
+      })
+      .catch((err) => {
+        console.log("error", err);
+      });
   };
+
+  const navigate = useNavigate();
+
+  const handleClick=()=> {
+    navigate("/view");
+  }
 
   return (
     <div>
@@ -81,6 +96,7 @@ const App = () => {
         <button className="button_submit" onClick={() => submit()}>
           Submit
         </button>
+        <button className="button_view" onClick={handleClick}>View</button>
       </div>
       {formValues.map((item, index) => (
         <div className="box" key={index}>
