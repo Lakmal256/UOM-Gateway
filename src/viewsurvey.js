@@ -24,28 +24,48 @@ const View = () => {
       {formValues.map((question) => {
         if (question.type === "open") {
           return (
-            <div className="view_box">
-              <input type="text" />
+            <div key={question.id} className="view_box">
+              <input type="text" name={question.name} />
             </div>
           );
         } else if (question.type === "scq") {
           return (
-            <div className="view_box">
-              <input type="radio" />
+            <div key={question.id} className="view_box">
+              {question.option.map((option) => {
+                return (
+                  <div key={option.id}>
+                    <input type="radio" name={option.name} />
+                  </div>
+                );
+              })}
             </div>
           );
         } else if (question.type === "mcq") {
           return (
-            <div className="view_box">
-              <input type="checkbox" />
+            <div key={question.id} className="view_box">
+              {question.option.map((option) => {
+                return (
+                  <div key={option.id}>
+                    <input type="checkbox" name={option.name} />
+                  </div>
+                );
+              })}
             </div>
           );
         } else if (question.type === "dropdown") {
           return (
-            <div className="view_box">
-              <select />
+            <div key={question.id} className="view_box">
+              {question.option.map((option) => {
+                return (
+                  <div key={option.id}>
+                    <select name={option.name} />
+                  </div>
+                );
+              })}
             </div>
           );
+        } else {
+          return null;
         }
       })}
     </div>
