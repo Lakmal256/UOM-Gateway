@@ -1,8 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// import reportWebVitals from "./reportWebVitals";
-import App from "./AddField";
-import View from "./viewsurvey";
+import App from "./Pages/addField";
+import View from "./Pages/viewSurvey";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -17,5 +16,3 @@ root.render(
     </BrowserRouter>
   </React.StrictMode>
 );
-
-// reportWebVitals();

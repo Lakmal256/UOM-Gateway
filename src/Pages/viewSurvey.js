@@ -1,5 +1,5 @@
-import "./style.css";
-import API from "./api";
+import API from "../api";
+import "../Styles/viewSurveyStyle.css";
 import React, { useState, useEffect } from "react";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";

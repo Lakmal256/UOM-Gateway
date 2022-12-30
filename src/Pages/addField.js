@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./style.css";
+import "../Styles/addFieldStyle.css";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
-import API from "./api";
+import API from "../api";
 import { useNavigate } from "react-router-dom";
 
 const App = () => {
@@ -60,7 +60,7 @@ const App = () => {
     var question = newFormValues.find((i) => i.id === id);
     // question.option =[...question.option,{id:question.option.length, optionName:""}] ;
     question.option.push({ id: question.option.length, optionName: "" });
-    console.log("question",question);
+    console.log("question", question);
     setFormValues(newFormValues);
   };
 
