@@ -27,19 +27,25 @@ const View = () => {
         if (question.type === "open") {
           return (
             <div key={question.id} className="view_box">
-              <div>{question.questionTitle}</div>
+              <div>
+                {question.id + 1}
+                {question.questionTitle}
+              </div>
               <input type="text" />
             </div>
           );
         } else if (question.type === "scq") {
           return (
             <div key={question.id} className="view_box">
-              <div>{question.questionTitle}</div>
+              <div>
+                {question.id + 1}
+                {question.questionTitle}
+              </div>
               {question.option.map((option) => {
                 return (
                   <div key={option.id}>
                     <div>{option.optionName}</div>
-                    <input type="radio" name={option.optionName} />
+                    <input type="radio" name={question.questionTitle} />
                   </div>
                 );
               })}
@@ -48,7 +54,10 @@ const View = () => {
         } else if (question.type === "mcq") {
           return (
             <div key={question.id} className="view_box">
-              <div>{question.questionTitle}</div>
+              <div>
+                {question.id + 1}
+                {question.questionTitle}
+              </div>
               {question.option.map((option) => {
                 return (
                   <div key={option.id}>
@@ -62,7 +71,10 @@ const View = () => {
         } else if (question.type === "dropdown") {
           return (
             <div key={question.id} className="view_box">
-              <div>{question.questionTitle}</div>
+              <div>
+                {question.id + 1}
+                {question.questionTitle}
+              </div>
               <Select
                 classes={{ select: "select" }}
                 type="select"
