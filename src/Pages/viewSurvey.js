@@ -27,8 +27,8 @@ const View = () => {
         if (question.type === "open") {
           return (
             <div key={question.id} className="view_box">
-              <div>
-                {question.id + 1}
+              <div className="question_title">
+                {question.id + 1}.
                 {question.questionTitle}
               </div>
               <input type="text" />
@@ -37,15 +37,15 @@ const View = () => {
         } else if (question.type === "scq") {
           return (
             <div key={question.id} className="view_box">
-              <div>
-                {question.id + 1}
+              <div className="question_title">
+                {question.id + 1}.
                 {question.questionTitle}
               </div>
               {question.option.map((option) => {
                 return (
-                  <div key={option.id}>
+                  <div className="class_option" key={option.id}>
+                    <input className="option_type" type="radio" name={question.questionTitle} />
                     <div>{option.optionName}</div>
-                    <input type="radio" name={question.questionTitle} />
                   </div>
                 );
               })}
@@ -54,15 +54,15 @@ const View = () => {
         } else if (question.type === "mcq") {
           return (
             <div key={question.id} className="view_box">
-              <div>
-                {question.id + 1}
+              <div className="question_title">
+                {question.id + 1}.
                 {question.questionTitle}
               </div>
               {question.option.map((option) => {
                 return (
-                  <div key={option.id}>
+                  <div className="class_option" key={option.id}>
+                    <input className="option_type" type="checkbox" name={option.optionName} />
                     <div>{option.optionName}</div>
-                    <input type="checkbox" name={option.optionName} />
                   </div>
                 );
               })}
@@ -71,18 +71,14 @@ const View = () => {
         } else if (question.type === "dropdown") {
           return (
             <div key={question.id} className="view_box">
-              <div>
-                {question.id + 1}
+              <div className="question_title">
+                {question.id + 1}.
                 {question.questionTitle}
               </div>
-              <Select
-                classes={{ select: "select" }}
-                type="select"
-                // name={option.optionName}
-              >
+              <Select classes={{ select: "select" }} type="select">
                 {question.option.map((option) => {
                   return (
-                    <div key={option.id}>
+                    <div className="class_option" key={option.id}>
                       <MenuItem value={option.optionName}>
                         {option.optionName}
                       </MenuItem>
