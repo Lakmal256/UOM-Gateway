@@ -60,6 +60,7 @@ const App = () => {
     var question = newFormValues.find((i) => i.id === id);
     // question.option =[...question.option,{id:question.option.length, optionName:""}] ;
     question.option.push({ id: question.option.length, optionName: "" });
+    console.log("question",question);
     setFormValues(newFormValues);
   };
 
