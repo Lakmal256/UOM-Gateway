@@ -79,9 +79,9 @@ const App = () => {
 
   const navigate = useNavigate();
 
-  const handleClick=()=> {
+  const handleClick = () => {
     navigate("/view");
-  }
+  };
 
   return (
     <div>
@@ -96,7 +96,9 @@ const App = () => {
         <button className="button_submit" onClick={() => submit()}>
           Submit
         </button>
-        <button className="button_view" onClick={handleClick}>View</button>
+        <button className="button_view" onClick={handleClick}>
+          View
+        </button>
       </div>
       {formValues.map((item, index) => (
         <div className="box" key={index}>
