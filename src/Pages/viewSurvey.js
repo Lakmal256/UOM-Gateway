@@ -3,6 +3,7 @@ import "../Styles/viewSurveyStyle.css";
 import React, { useState, useEffect } from "react";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
+import { useNavigate } from "react-router-dom";
 
 const View = () => {
   const [formValues, setFormValues] = useState([]);
@@ -12,9 +13,26 @@ const View = () => {
   }, []);
 
   const getSurveyData = () => {
-    API.get("/getsurvey?id=4")
+    API.get("/getsurveybyid?id=4")
       .then((res) => {
         setFormValues(JSON.parse(res.data.survey.survey));
+      })
+      .catch((err) => {
+        console.log("error", err);
+      });
+  };
+
+  const navigate = useNavigate();
+
+  const submitdata = () => {
+    // localStorage.setItem("dataSet", JSON.stringify(formValues));
+    // setFormValues([{ id: 0, questionTitle: "", type: "", option: [] }]);
+
+    const payload = { answer: JSON.stringify(formValues) };
+    API.post("/addanswer", payload)
+      .then((res) => {
+        console.log("result", res.data.message);
+        navigate("/success");
       })
       .catch((err) => {
         console.log("error", err);
@@ -48,9 +66,6 @@ const View = () => {
       if (element.id !== oid) element.selected = false;
     });
     setFormValues(newFormValues);
-  };
-  const submitdata = () => {
-    console.log("question", formValues);
   };
 
   return (
@@ -154,7 +169,7 @@ const View = () => {
           return null;
         }
       })}
-      <button className="button_view" onClick={submitdata}>
+      <button className="button_view" onClick={() => submitdata()}>
         Submit
       </button>
     </div>

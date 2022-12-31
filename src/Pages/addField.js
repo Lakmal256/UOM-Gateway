@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Styles/addFieldStyle.css";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import API from "../api";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const App = () => {
   const [formValues, setFormValues] = useState([
     { id: 0, questionTitle: "", type: "scq", option: [], answer: "" },
   ]);
+
+  const [isUpdate, setIsUpdate] = useState(false);
+
+  const location = useLocation();
 
   const addFormFields = () => {
     setFormValues([
@@ -21,6 +25,23 @@ const App = () => {
         answer: "",
       },
     ]);
+  };
+
+  useEffect(() => {
+    console.log("path", location);
+    const id = location.search.split("=")[1];
+    getSurveyData(id);
+    setIsUpdate(id ? true : false);
+  });
+
+  const getSurveyData = (id) => {
+    API.get(`/getsurveybyid?id=${id}`)
+      .then((res) => {
+        setFormValues(JSON.parse(res.data.survey.survey));
+      })
+      .catch((err) => {
+        console.log("error", err);
+      });
   };
 
   const removeFormFields = (i) => {
@@ -79,7 +100,8 @@ const App = () => {
     setFormValues([{ id: 0, questionTitle: "", type: "scq", option: [] }]);
 
     const payload = { survey: JSON.stringify(formValues) };
-    API.post("/addsurvey", payload)
+    const method = isUpdate ? API.put : API.post;
+    method("/addsurvey", payload)
       .then((res) => {
         console.log("result", res.data.message);
       })
@@ -105,7 +127,7 @@ const App = () => {
           Add
         </button>
         <button className="button_submit" onClick={() => submit()}>
-          Submit
+          {isUpdate ? "Update" : "Submit"}
         </button>
         <button className="button_view" onClick={handleClick}>
           View
