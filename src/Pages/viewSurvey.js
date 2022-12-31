@@ -29,18 +29,6 @@ const View = () => {
     setFormValues(newFormValues);
   };
 
-  const handleDropdownData = (e, qid, oid) => {
-    const value = e.target.value;
-    var newFormValues = JSON.parse(JSON.stringify(formValues));
-    var question = newFormValues.find((i) => i.id === qid);
-    var option = question.option.find((i) => i.id === oid);
-    option.selected = value;
-    question.option.forEach((element) => {
-      if (element.id !== oid) element.selected = false;
-    });
-    setFormValues(newFormValues);
-  };
-
   const handleMcqData = (e, qid, oid) => {
     const value = e.target.checked;
     var newFormValues = JSON.parse(JSON.stringify(formValues));
@@ -148,16 +136,14 @@ const View = () => {
                 <Select
                   classes={{ select: "select" }}
                   type="select"
-                  // value={option.selected}
-                  onChange={(e) => handleDropdownData(e, question.id)}
+                  value={question.answer}
+                  onChange={(e) => handleOpenData(e, question.id)}
                 >
                   {question.option.map((option) => {
                     return (
-                      <div className="class_option" key={option.id}>
-                        <MenuItem value={option.optionName}>
-                          {option.optionName}
-                        </MenuItem>
-                      </div>
+                      <MenuItem key={option.id} value={option.optionName}>
+                        {option.optionName}
+                      </MenuItem>
                     );
                   })}
                 </Select>

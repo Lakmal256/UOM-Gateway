@@ -32,7 +32,7 @@ body {
   padding: 1px !important;
   width: 80px !important;
   font-size: small !important;
-  margin-left: 50px !important;
+  margin-left: 15px !important;
 }
 .class_option {
   display: flex;
@@ -58,7 +58,8 @@ body {
   cursor: pointer;
   border-radius: 6px;
   transition: 0.3s;
-  margin-left: 10px;
+  margin-left: 855px;
+  margin-top: 15px;
 }
 
 .button_view:hover {
