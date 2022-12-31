@@ -7,13 +7,19 @@ import { useNavigate } from "react-router-dom";
 
 const App = () => {
   const [formValues, setFormValues] = useState([
-    { id: 0, questionTitle: "", type: "scq", option: [] },
+    { id: 0, questionTitle: "", type: "scq", option: [], answer: "" },
   ]);
 
   const addFormFields = () => {
     setFormValues([
       ...formValues,
-      { id: formValues.length, questionTitle: "", type: "scq", option: [] },
+      {
+        id: formValues.length,
+        questionTitle: "",
+        type: "scq",
+        option: [],
+        answer: "",
+      },
     ]);
   };
 
@@ -59,8 +65,12 @@ const App = () => {
     var newFormValues = JSON.parse(JSON.stringify(formValues));
     var question = newFormValues.find((i) => i.id === id);
     // question.option =[...question.option,{id:question.option.length, optionName:""}] ;
-    question.option.push({ id: question.option.length, optionName: "" });
-    console.log("question", question);
+    question.option.push({
+      id: question.option.length,
+      optionName: "",
+      selected: false,
+    });
+    // console.log("question", question);
     setFormValues(newFormValues);
   };
 

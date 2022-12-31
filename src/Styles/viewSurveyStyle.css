@@ -4,6 +4,9 @@ body {
 * {
   box-sizing: border-box;
 }
+.main_div {
+  margin-bottom: 60px;
+}
 .view_box {
   padding: 10px;
   width: 600px;
@@ -14,19 +17,50 @@ body {
   position: relative;
   border-top: 5px solid dodgerblue;
 }
-.question_title{
-    padding: 5px;
+.question_title {
+  padding: 5px;
+  display: flex;
+}
+.question_id {
+  margin-right: 3px;
+}
+.input {
+  margin-left: 20px;
+  margin-top: 5px;
 }
 .select {
   padding: 1px !important;
   width: 80px !important;
   font-size: small !important;
-  margin-left: 5px !important;
+  margin-left: 50px !important;
 }
-.class_option{
-    display: flex;
-    padding: 5px;
+.class_option {
+  display: flex;
+  padding: 5px;
 }
-.option_type{
-    margin-top: inherit;
+.option_type {
+  margin-top: inherit;
+  margin-right: 5px;
+}
+.outlined {
+  margin-left: 20px;
+  margin-top: 5px;
+}
+.type_name {
+  margin-left: 10px;
+  display: flex;
+}
+.button_view {
+  padding: 10px 20px;
+  background-color: gray;
+  border: 1px solid #ddd;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+  margin-left: 10px;
+}
+
+.button_view:hover {
+  background-color: rgb(22, 163, 97);
 }
